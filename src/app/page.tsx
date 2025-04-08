@@ -1,3 +1,6 @@
+import ThemeToggle from "@/components/buttons/ThemeToggle";
+import { routes } from "@/utils/constants";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,12 +12,15 @@ export default function Home() {
           </svg>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">WatchParty</span>
         </div>
-        <button className="px-5 py-2 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-all flex items-center gap-2">
-          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h4m6 0v3a3 3 0 01-3 3H9a3 3 0 01-3-3V3m3 0h6" />
-          </svg>
-          Login
-        </button>
+        <div className="flex space-x-5">
+          <ThemeToggle />
+          <Link href={routes.auth} className="px-5 py-2 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-all flex items-center gap-2">
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h4m6 0v3a3 3 0 01-3 3H9a3 3 0 01-3-3V3m3 0h6" />
+            </svg>
+            Login
+          </Link>
+        </div>
       </nav>
 
       <main className="container mx-auto px-6 md:px-12 lg:px-20 py-12">
@@ -27,14 +33,11 @@ export default function Home() {
               Create a watching session and invite friends to enjoy YouTube videos, movies, and more - all in perfect sync. Chat, react, and share moments in real-time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <button className="px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-all flex items-center justify-center gap-2">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <button className="px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-700 text-nowrap text-white font-medium transition-all flex items-center justify-center gap-2">
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1-7v-6l5 3-5 3z" />
                 </svg>
                 Create a Watch Party
-              </button>
-              <button className="px-8 py-4 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-white font-medium transition-all">
-                How it works
               </button>
             </div>
           </div>
